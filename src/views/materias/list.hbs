@@ -1,0 +1,29 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each materias}}
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="#">
+                            <h3 class="card-title text-uppercase">
+                                {{materia}}
+                            </h3>
+                        </a>
+                        <p class="m-2">Créditos: {{creditos}}</p>
+                        <p class="m-2">Semestre: {{semestre}}</p>
+                        <p>{{timeago created_at}}</p>
+                        <a href="/materias/delete/{{id}}" class="btn btn-danger p-2">Borrar Materia</a> <!-- borra id correspondiente -->
+                        <a href="/materias/edit/{{id}}" class="btn btn-secondary p-2">Editar</a>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No hay materias guardadas hasta ahora</p>
+                    <a href="/materias/add">¡Agrega una acá!</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
